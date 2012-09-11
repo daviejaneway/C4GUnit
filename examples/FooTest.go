@@ -4,8 +4,6 @@ import "fmt"
 import "github.com/daviejaneway/C4G/src"
 import "github.com/daviejaneway/C4GUnit/src"
 
-var Session = C4GUnit.TestSession{}
-
 var t = C4GUnit.TestContract{
   Conditions:[]C4G.Condition{
     C4G.Condition{"Assert: @i > 0"},
@@ -31,5 +29,5 @@ func main() {
   testFoo()
   testFoo2()
   
-  fmt.Println(&Session)
+  fmt.Println(&C4GUnit.Session)
 }

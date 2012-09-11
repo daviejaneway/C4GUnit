@@ -9,7 +9,7 @@ type TestSession struct {
 }
 
 func (ts *TestSession) String() string {
-  return fmt.Sprintf("ASSERTIONS: %d, FAILURES: %d", ts.Passes, ts.Failures)
+  return fmt.Sprintf("ASSERTIONS: %d, PASSES: %d, FAILURES: %d", ts.Passes + ts.Failures, ts.Passes, ts.Failures)
 }
 
 var Session = TestSession{}
