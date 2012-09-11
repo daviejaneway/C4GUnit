@@ -21,9 +21,9 @@ type TestContract struct {
 func(tc TestContract) Assert(index int, b bool) {
   defer func() {
       if r := recover(); r != nil {
-        Session.Failures++
+        (&Session).Failures++
       } else {
-        Session.Passes++
+        (&Session).Passes++
       }
   }()
   
