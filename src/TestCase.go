@@ -8,7 +8,7 @@ type TestSession struct {
   Failures int
 }
 
-func (ts TestSession) String() string {
+func (ts *TestSession) String() string {
   return fmt.Sprintf("ASSERTIONS: %d, FAILURES: %d", ts.Passes, ts.Failures)
 }
 
@@ -21,9 +21,9 @@ type TestContract struct {
 func(tc TestContract) Assert(index int, b bool) {
   defer func() {
       if r := recover(); r != nil {
-        (&Session).Failures++
+        Session.Failures++
       } else {
-        (&Session).Passes++
+        Session.Passes++
       }
   }()
   

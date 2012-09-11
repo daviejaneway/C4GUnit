@@ -22,7 +22,7 @@ func testFoo() {
 }
 
 func testFoo2() {
-  i := foo(5)
+  i := foo(6)
   
   t.Assert(1, i == 25)
 }
@@ -31,5 +31,5 @@ func main() {
   testFoo()
   testFoo2()
   
-  fmt.Println(Session)
+  fmt.Println(&Session)
 }
