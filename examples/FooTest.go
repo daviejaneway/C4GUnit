@@ -1,4 +1,3 @@
-//TODO - Change package to C4GUnit
 package main
 
 import "fmt"
@@ -7,7 +6,7 @@ import "github.com/daviejaneway/C4GUnit/src"
 
 var Session = C4GUnit.TestSession{}
 
-var t = TestContract{
+var t = C4GUnit.TestContract{
   Conditions:[]C4G.Condition{
     C4G.Condition{"Assert: @i > 0"},
     C4G.Condition{"Assert: @i * @i == 25"}}}
@@ -32,5 +31,5 @@ func main() {
   testFoo()
   testFoo2()
   
-  fmt.Printf("ASSERTIONS: %d, FAILURES: %d", Session.passes, Session.failures)
+  fmt.Println(Session)
 }
